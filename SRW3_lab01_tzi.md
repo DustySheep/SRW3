@@ -14,3 +14,8 @@ header-includes:
 ---
 # Chapitre 1
 Texte
+
+# Installation du rôle Serveur Web (IIS)
+-   Sélection de rôles 
+-   Ajouter rôle
+-   Cocher la case "Serveur Web (IIS)
