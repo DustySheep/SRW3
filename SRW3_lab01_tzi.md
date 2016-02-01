@@ -19,3 +19,19 @@ Texte
 -   Sélection de rôles 
 -   Ajouter rôle
 -   Cocher la case "Serveur Web (IIS)
+-   Dans la rubrique Services de rôles cocher la case ASP.NET
+
+# Désactivation sites actifs par défaut
+1.   Rôles
+2.  Serveur Web (IIS)
+3.   Gestionaire des services
+4.   Sites
+5.   Default websites
+6.   Click droit (arrêter)
+
+# Ajout d'un site web (IIS)
+*  Click droit sur site - Ajouter un site web
+*   Nom du site : Site IIS
+*   Chemin : C:\iis_www
+*   Liaison port : 8080
+*   nom de l'hôte : iis.html
