@@ -16,6 +16,7 @@ header-includes:
 # Mise en place d'un service Internet et Intranet
 *   Ajout de 2 sites dans le gestionnaire des services internet (IIS)
     * Création de 2 répertoires Internet et Intranet dans C:/www
+    * Création de 2 fichiers index.html dans les 2 répertoires
 
 Premier site 
  - Nom : Site01
@@ -24,6 +25,6 @@ Premier site
   
  Second site 
  - Nom : Site02
- - Repertoire : C:\www\Internet
- - Nom de l'hôte : www.dupont.com
+ - Repertoire : C:\www\Intranet
+ - Nom de l'hôte : intranet.dupont.com
 
