@@ -24,14 +24,14 @@ header-includes:
  
 
 Premier site 
- - Nom : Site01
+ - Nom : Internet
  - Repertoire : C:\www\Internet
  - Nom de l'hôte : www.dupont.com
  - port 80
  - Adresse ip : 172.17.xxx.xxx
   
  Second site 
- - Nom : Site02
+ - Nom : Intranet
  - Repertoire : C:\www\Intranet
  - Nom de l'hôte : intranet.dupont.com
  - port 80
