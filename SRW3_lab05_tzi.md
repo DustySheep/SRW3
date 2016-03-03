@@ -42,5 +42,9 @@ Premier site
 Aller dans Configuration / Utilisateurs et groupes locaux / Utilisateurs / Clic droit et créer.
 Pareil pour les groupes (Directeur, Comptable, Ingénieur)
 
-#
+# Gestion accès des sites
+Afin de rendre l'intranet accessible depuis l'internet, il faut :
+*   Selectionner le site Internet dans Serveur/Sites/Internet
+*   Clic droit créer un répertoire virtuel
+*   Pointer sur le chemin physique de l'intranet (càd C:/www/Intranet)
 
