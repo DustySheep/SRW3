@@ -20,6 +20,8 @@ header-includes:
 
 *  Dans les settings de la Machine Virtuelle, ajouter une carte réseau afin d'en avoir 1 en bridge et 1 en NAT
 *  Pour les tests, modifiers les fichiers hosts de la machine local et virtuelle
+*  Mise en place du document par défaut index.html dans les deux sites : Gestionnaire de services / Selection serveur et de site / Dans la partie IIS sélectionner Document par défaut et ajouter XXX.html (présent dans le C:/www)
+ 
 
 Premier site 
  - Nom : Site01
@@ -39,4 +41,6 @@ Premier site
 # Création des utilisateurs
 Aller dans Configuration / Utilisateurs et groupes locaux / Utilisateurs / Clic droit et créer.
 Pareil pour les groupes (Directeur, Comptable, Ingénieur)
+
+#
 
