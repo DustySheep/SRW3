@@ -18,13 +18,25 @@ header-includes:
     * Création de 2 répertoires Internet et Intranet dans C:/www
     * Création de 2 fichiers index.html dans les 2 répertoires
 
+*  Dans les settings de la Machine Virtuelle, ajouter une carte réseau afin d'en avoir 1 en bridge et 1 en NAT
+*  Pour les tests, modifiers les fichiers hosts de la machine local et virtuelle
+
 Premier site 
  - Nom : Site01
  - Repertoire : C:\www\Internet
  - Nom de l'hôte : www.dupont.com
+ - port 80
+ - Adresse ip : 172.17.xxx.xxx
   
  Second site 
  - Nom : Site02
  - Repertoire : C:\www\Intranet
  - Nom de l'hôte : intranet.dupont.com
+ - port 80
+ - Adresse ip : 192.168.xxx.xxx
+
+
+# Création des utilisateurs
+Aller dans Configuration / Utilisateurs et groupes locaux / Utilisateurs / Clic droit et créer.
+Pareil pour les groupes (Directeur, Comptable, Ingénieur)
 
