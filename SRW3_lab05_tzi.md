@@ -56,3 +56,7 @@ Afin de rendre l'intranet accessible depuis l'internet, il faut :
 * Le partie client sera disponible à cette adresse : www.dupont.com/intranet/mdupont
 
 # Gestion Espace client de l'internet
+* Utilisateur client, login : dclient, password : Qwertz123
+* Dans les autorisation /sécurité du dossier Internet/client supprimer le groupe "utilisateurs" et ajouter dclient ainsi que IIS_IUSRS
+* Activer l'authentification de base sur le dossier Internet/Client
+* 
