@@ -48,6 +48,7 @@ Afin de rendre l'intranet accessible depuis l'internet, il faut :
 *   Clic droit créer un répertoire virtuel
 *   Pointer sur le chemin physique de l'intranet (càd C:/www/Intranet)
 *   Activer l'authentificiation de base sur le dossier "intranet" créée et désactivé l'authentification anonyme
+*   Puis création similaire d'un répertoire virtuel dans intranet vers internet
 
 # Gestion Espace privé de l'intranet
 * Création d'un dossier utilisateur pour chaque utilisateur
@@ -59,4 +60,14 @@ Afin de rendre l'intranet accessible depuis l'internet, il faut :
 * Utilisateur client, login : dclient, password : Qwertz123
 * Dans les autorisation /sécurité du dossier Internet/client supprimer le groupe "utilisateurs" et ajouter dclient ainsi que IIS_IUSRS
 * Activer l'authentification de base sur le dossier Internet/Client
+* Désormais seul le dclient et Administrateur peuvent accéder à : http://www.dupont.com/client/
+* Ajout du groupe ingénieur dans les autorisations du dossier Internet/Client désormais les ingénieurs ont accès au dossier client
+* Ajout du groupe ingénieur au Sites internet et intranet
+
+#Service de gestion 
+
+* Instalaltion des services de rôles "Gestionnaire de sites internet"
+* Sur le serveur, cliquer sur service de gestion, sélectionner l'ip en 192.168 et activer la connexion à distance.
+* Dans les sites internet et intranet sous Gestion/Autorisations du Gestionnaire des services Internet, ajouter le groupe ingénieurs dans l'action "Autoriser l'utilisateur"
+* Pour pouvoir réaliser cette tâche, le service doit être arrété.
 * 
