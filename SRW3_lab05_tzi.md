@@ -64,7 +64,8 @@ Afin de rendre l'intranet accessible depuis l'internet, il faut :
 * Ajout du groupe ingénieur dans les autorisations du dossier Internet/Client désormais les ingénieurs ont accès au dossier client
 * Ajout du groupe ingénieur au Sites internet et intranet
 
-#Service de gestion 
+
+# Service de gestion
 
 * Instalaltion des services de rôles "Gestionnaire de sites internet"
 * Sur le serveur, cliquer sur service de gestion, sélectionner l'ip en 192.168 et activer la connexion à distance.
