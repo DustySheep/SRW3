@@ -49,9 +49,10 @@ Afin de rendre l'intranet accessible depuis l'internet, il faut :
 *   Pointer sur le chemin physique de l'intranet (càd C:/www/Intranet)
 *   Activer l'authentificiation de base sur le dossier "intranet" créée et désactivé l'authentification anonyme
 
-# Gestion Espace client de l'intranet
+# Gestion Espace privé de l'intranet
 * Création d'un dossier utilisateur pour chaque utilisateur
 * Pour ce dossier, dans sécurité / avancé, supprimer Utilisateurs et ajouter l'utilisateur correspondant au dossier "mdupont" par ex ainsi que le groupe "IIS_IUSRS".
 * Verifier que l'authentification de base soit bien présente
 * Le partie client sera disponible à cette adresse : www.dupont.com/intranet/mdupont
 
+# Gestion Espace client de l'internet
