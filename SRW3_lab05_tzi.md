@@ -71,9 +71,17 @@ Afin de rendre l'intranet accessible depuis l'internet, il faut :
 * Sur le serveur, cliquer sur service de gestion, sélectionner l'ip en 192.168 et activer la connexion à distance.
 * Dans les sites internet et intranet sous Gestion/Autorisations du Gestionnaire des services Internet, ajouter le groupe ingénieurs dans l'action "Autoriser l'utilisateur"
 * Pour pouvoir réaliser cette tâche, le service doit être arrété.
-* 
-# Sécurité
-*   Dans Gestionnaire des services Internet (IIS) cliquer sur le serveur / Affichage des fonctionnalités / Certificats de serveur (Section IIS)
-*   Créer un certificat auto-signé
-*   Entrer un "nom convivial" ex : certif_dupont
 
+
+# Sécurité
+## implémentation Certificat auto-signé sur le server
+*   Dans Gestionnaire des services Internet (IIS) cliquer sur le serveur / Affichage des fonctionnalités / Certificats de serveur (Section IIS) / Créer un certificat auto-signé
+*   Lui donner un nom par exemple "certif_dupont"
+*   Selectionner en suite un site puis aller dans ses liaisons
+*   Ajouter une liaison, port : 443, type : https, l'adresse ip reste la même.
+*   
+ ## Activation SSL
+* Sélectionner un site puis "paramètres SSL" dans les paramètres SSL cocher la case Exiger SSL et "Ignorer".
+* Le site est désormais accessible sous https://www.dupont.com ou https://intranet.dupont.com
+
+    
