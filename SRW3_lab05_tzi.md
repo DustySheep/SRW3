@@ -72,3 +72,8 @@ Afin de rendre l'intranet accessible depuis l'internet, il faut :
 * Dans les sites internet et intranet sous Gestion/Autorisations du Gestionnaire des services Internet, ajouter le groupe ingénieurs dans l'action "Autoriser l'utilisateur"
 * Pour pouvoir réaliser cette tâche, le service doit être arrété.
 * 
+# Sécurité
+*   Dans Gestionnaire des services Internet (IIS) cliquer sur le serveur / Affichage des fonctionnalités / Certificats de serveur (Section IIS)
+*   Créer un certificat auto-signé
+*   Entrer un "nom convivial" ex : certif_dupont
+
