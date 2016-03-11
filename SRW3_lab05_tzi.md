@@ -67,21 +67,88 @@ Afin de rendre l'intranet accessible depuis l'internet, il faut :
 
 # Service de gestion
 
-* Instalaltion des services de rôles "Gestionnaire de sites internet"
+* Installation des services de rôles "Gestionnaire de sites internet"
 * Sur le serveur, cliquer sur service de gestion, sélectionner l'ip en 192.168 et activer la connexion à distance.
 * Dans les sites internet et intranet sous Gestion/Autorisations du Gestionnaire des services Internet, ajouter le groupe ingénieurs dans l'action "Autoriser l'utilisateur"
 * Pour pouvoir réaliser cette tâche, le service doit être arrété.
 
 
 # Sécurité
-## implémentation Certificat auto-signé sur le server
+## implémentation Certificat auto-signé sur le serveur
 *   Dans Gestionnaire des services Internet (IIS) cliquer sur le serveur / Affichage des fonctionnalités / Certificats de serveur (Section IIS) / Créer un certificat auto-signé
 *   Lui donner un nom par exemple "certif_dupont"
 *   Selectionner en suite un site puis aller dans ses liaisons
 *   Ajouter une liaison, port : 443, type : https, l'adresse ip reste la même.
-*   
  ## Activation SSL
 * Sélectionner un site puis "paramètres SSL" dans les paramètres SSL cocher la case Exiger SSL et "Ignorer".
 * Le site est désormais accessible sous https://www.dupont.com ou https://intranet.dupont.com
+
+## Redirections des URL 
+* Décocher la case "Exiger SSL" dans les paramètres des sites (case coché précédemment)
+* Télécharger et installer le module "URL Rewrite" de microsoft (http://www.iis.net/downloads/microsoft/url-rewrite)
+* Remplacer le contenu de web.config dans le repertoire racine d'intranet par :
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+ <system.webServer>
+    <rewrite>
+        <rules>
+            <rule name="HTTP to HTTPS redirect" stopProcessing="true">
+            <match url="(.*)" />
+            <conditions>
+            <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+            </conditions> 
+            <action type="Redirect" redirectType="Found"
+url="https://{HTTP_HOST}{REQUEST_URI}" />
+            </rule>
+        </rules>
+    </rewrite>
+    </system.webServer>
+</configuration>
+```
+* Dans le fichier web.config du repertoire mdupont coller ce code :
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<system.webServer>
+    <rewrite>
+    <rules>
+       <rule name="private client folder" stopProcessing="true">
+          <match url="(.*)" />
+          <conditions>
+             <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+           </conditions>
+           <action type="Redirect" redirectType="Found" url="https://{HTTP_HOST}{REQUEST_URI}" />
+         </rule>
+   </rules>
+    </rewrite>
+</system.webServer>
+</configuration>
+```
+* Dans le répertoire Internet/Client 
+* Remplacer le contenu de web.config par ce code :
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <rewrite>
+           <rules>
+                <rule name="clients space" stopProcessing="true">
+                    <match url="(.*)" />
+                        <conditions>
+                             <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+                         </conditions>
+                    <action type="Redirect" redirectType="Found"url="https://{HTTP_HOST}{REQUEST_URI}" />
+                </rule>
+            </rules>
+          </rewrite>
+    </system.webServer>
+</configuration>
+```
+
+*   La redirection en https est maintenant présente lors de la navigation 
+
+
+
 
     
